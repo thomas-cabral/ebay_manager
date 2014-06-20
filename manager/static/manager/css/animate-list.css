@@ -1,0 +1,29 @@
+.item-animate.ng-enter, .item-animate.ng-leave {
+    -webkit-transition: 800ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 800ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 800ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 800ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 800ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+}
+.item-animate.ng-leave
+{
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+}
+
+.item-animate.ng-enter.item-animate.ng-enter-active,
+.item-animate.ng-leave {
+    opacity: 1;
+    height: 30px;
+}
+
+.item-animate.ng-leave.item-animate.ng-leave-active,
+.item-animate.ng-enter {
+    opacity: 0;
+    height: 0px;
+}

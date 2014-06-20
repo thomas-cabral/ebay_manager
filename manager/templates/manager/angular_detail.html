@@ -1,0 +1,152 @@
+{% verbatim %}
+<div class="container">
+<form class="form-horizontal" name="item_form" novalidate>
+<fieldset>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+                <h2 class="panel-title">Item Details</h2>
+            </div>
+            <div class="panel-body">
+
+            <div class="control-group" ng-class="{ 'has-error' : item_form.category.$invalid && !item_form.category.$pristine }">
+                <label class="control-label" for="category"><strong>Category:</strong></label>
+
+                <div class="controls">
+                    <select ng-model="item.category" class="form-control" name="category" required>
+                        <option selected="selected" value="1">
+                            Misc - 1
+                        </option>
+                    </select>
+                </div>
+                <p ng-show="item_form.purchased_for.$invalid && !item_form.purchased_for.$pristine" class="help-block">Category is required</p>
+            </div>
+
+            <div class="control-group" ng-class="{ 'has-error' : item_form.name.$invalid && !item_form.name.$pristine }">
+                <label class="control-label" for="name"><strong>Name:</strong></label>
+
+                <div class="controls">
+                    <input name="name" type="text" ng-model="item.name" class="form-control">
+                </div>
+                <p ng-show="item_form.purchased_for.$invalid && !item_form.purchased_for.$pristine" class="help-block">Purchased for price required</p>
+            </div>
+
+            <div class="control-group" ng-class="{ 'has-error' : item_form.purchased_for.$invalid && !item_form.purchased_for.$pristine }">
+                <label class="control-label" for="purchased_for"><strong>Purchased
+                for:</strong></label>
+
+                <div class="controls">
+                    <input name="purchased_for" type="text" ng-model="item.purchased_for" class="form-control" ng-maxlenght="10" required>
+                </div>
+                <p ng-show="item_form.purchased_for.$invalid && !item_form.purchased_for.$pristine" class="help-block">Purchased for price required</p>
+            </div>
+
+            <div class="control-group" ng-class="{ 'has-error' : item_form.description.$invalid && !item_form.description.$pristine }">
+                <label class="control-label" for=
+                "description">description:</label>
+
+                <div class="controls">
+                    <textarea cols="40" name="description" rows="10" ng-model="item.description" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="control-group" ng-class="{ 'has-error' : item_form.item_weight.$invalid && !item_form.item_weight.$pristine }">
+                <label class="control-label" for="item_weight">item
+                weight:</label>
+
+                <div class="controls">
+                    <input name="item_weight" type="text" ng-model="item.item_weight" class="form-control">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+                <h2 class="panel-title">Item Listed</h2>
+            </div>
+            <div class="panel-body">
+
+            <div class="control-group">
+                <label class="control-label" for="listing_url">listing
+                url:</label>
+
+                <div class="controls">
+                    <input name="listing_url" type="text" ng-model="item.listing_url">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="starting_bid">starting
+                bid:</label>
+
+                <div class="controls">
+                    <input name="starting_bid" type="text" ng-model="item.starting_bid">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="buy_it_now">buy it
+                now:</label>
+
+                <div class="controls">
+                    <input name="buy_it_now" type="text" ng-model="item.buy_it_now">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="shipping_estimate">shipping
+                estimate:</label>
+
+                <div class="controls">
+                    <input name="shipping_estimate" type="text" ng-model="item.shipping_estimate">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Item Sold</h2>
+        </div>
+        <div class="panel-body">
+
+            <div class="control-group">
+                <label class="control-label" for="sold_for">sold for:</label>
+
+                <div class="controls">
+                    <input name="sold_for" type="text" ng-model="item.sold_for">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="shipping_actual">shipping
+                actual:</label>
+
+                <div class="controls">
+                    <input name="shipping_actual" type="text" ng-model="item.shipping_actual">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="total_weight">total
+                weight:</label>
+
+                <div class="controls">
+                    <input name="total_weight" type="text" ng-model="item.total_weight">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<a href="#/" class="btn btn-default">Cancel</a>
+<button ng-click="save()"
+    class="btn btn-primary">Update</button>
+<button ng-click="destroy()"
+    ng-show="item.$remove" class="btn btn-danger pull-right">Delete</button>
+</fieldset>
+</form>
+</div>
+{% endverbatim %}
